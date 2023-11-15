@@ -1,0 +1,19 @@
+.container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu {
+    margin-left: auto;
+}
+
+.nav-item {
+    color: #ececec;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    font-weight: 600;
+    color: white;
+    border-bottom: 2px solid white;
+}
