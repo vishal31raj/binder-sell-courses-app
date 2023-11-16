@@ -1,1 +1,118 @@
-<p>profile works!</p>
+<div class="row mb-5">
+  <div class="col-4">
+    <div class="image-div">
+      <img src="{{ userDetails.imageUrl }}" class="image" alt="" />
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="form-div p-3">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="displayName" class="form-label">Display name</label>
+            <input
+              type="text"
+              class="form-control is-invalid"
+              id="displayName"
+              placeholder="Display name"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control is-invalid"
+              id="firstName"
+              placeholder="First name"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Last name"
+            />
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mb-3">
+            <label for="about" class="form-label">
+              About yourself (max. 100 chars)
+            </label>
+            <textarea
+              rows="2"
+              class="form-control"
+              id="lastName"
+              placeholder="About yourself"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mb-3">
+            Are you a
+            <input
+              class="form-check-input ms-3"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label ms-2" for="flexRadioDefault1">
+              Student
+            </label>
+            <input
+              class="form-check-input ms-3"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+            />
+            <label class="form-check-label ms-2" for="flexRadioDefault2">
+              Professional
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="experience" class="form-label"> Experience </label>
+            <select class="form-select" aria-label="Default select example">
+              <option *ngFor="let item of userDetails.experience.options">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="experience" class="form-label"> Expertise </label>
+            <select class="form-select" aria-label="Default select example">
+              <option *ngFor="let item of userDetails.expertise.options">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mb-3">
+            <label for="about" class="form-label">
+              Mention your role (max. 200 chars)
+            </label>
+            <textarea
+              rows="3"
+              class="form-control"
+              id="lastName"
+              placeholder="Mention your role"
+            ></textarea>
+          </div>
+        </div>
+        <div>
+            <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

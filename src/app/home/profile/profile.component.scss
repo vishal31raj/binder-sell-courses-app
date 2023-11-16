@@ -1,0 +1,18 @@
+.image-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid silver;
+
+    .image {
+        max-height: 200px;
+        max-width: 200px;
+        // border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
+.form-div {
+    background-color: #ececec;
+    border-radius: 8px;
+}
