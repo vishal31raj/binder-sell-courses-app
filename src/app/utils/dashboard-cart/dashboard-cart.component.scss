@@ -1,5 +1,14 @@
-.wishlist-course-card {
+.cart-container {
   background-color: #ececec;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.cart-course-item {
+  border: 1px solid silver;
+  display: flex;
+  align-items: center;
+  background-color: white;
   border-radius: 8px;
 
   .course-name {
@@ -24,4 +33,13 @@
     color: green;
     font-weight: 600;
   }
+
+  .remove-btn-div {
+    margin-left: auto;
+  }
+}
+
+.cart-header {
+  font-weight: 600;
+  color: #4c4c4c;
 }

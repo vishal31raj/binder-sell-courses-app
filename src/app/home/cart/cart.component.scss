@@ -1,0 +1,50 @@
+.checkout-card {
+  background-color: #ececec;
+  border-radius: 8px;
+
+  .total-amount-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .amount {
+        font-size: 18px;
+        font-weight: 600;
+    }
+  }
+}
+
+.cart-course-item {
+  border: 1px solid silver;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+
+  .course-name {
+    font-weight: 600;
+    color: #4c4c4c;
+  }
+
+  .actual-price {
+    font-weight: 600;
+  }
+
+  .actual-price.discount {
+    text-decoration: line-through;
+    color: #4c4c4c;
+  }
+
+  .discounted-price {
+    font-weight: 600;
+  }
+
+  .discount-flag {
+    color: green;
+    font-weight: 600;
+  }
+
+  .remove-btn-div {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,13 @@
+.image-div {
+    border: 1px solid silver;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url('../../../assets/images/banner-img.jpg');
+    background-repeat: none;
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}

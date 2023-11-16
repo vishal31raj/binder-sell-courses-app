@@ -1,1 +1,46 @@
-<p>wishlist works!</p>
+<div class="container">
+  <div>
+    <h5 class="cart-header">Your Wishlist:</h5>
+    <hr />
+  </div>
+  <div class="text-center my-5" *ngIf="wishlistedItems!.length <= 0">
+    No items in your wishlist!
+  </div>
+  <div class="row" *ngIf="wishlistedItems!.length > 0">
+    <div class="col-4" *ngFor="let course of wishlistedItems">
+      <div class="wishlist-course-card p-3 mb-3">
+        <h5 class="course-title">{{ course.courseName }}</h5>
+        <div>
+          <span class="badge bg-info me-2" *ngFor="let tag of course.tags">
+            {{ tag }}
+          </span>
+        </div>
+        <p class="my-2 course-author">by {{ course.author }}</p>
+
+        <p class="mt-2">
+          <span
+            class="actual-price me-2"
+            [ngClass]="course.discountPercentage !== '0' ? 'discount' : ''"
+            >{{ course.actualPrice }}</span
+          >
+          <span
+            class="discounted-price me-2"
+            *ngIf="course.discountPercentage !== '0'"
+            >{{ course.discountedPrice }}</span
+          >
+          <span class="discount-flag" *ngIf="course.discountPercentage !== '0'"
+            >({{ course.discountPercentage }} discount)</span
+          >
+        </p>
+        <div class="row">
+          <div class="col-6 d-grid gap-2">
+            <button class="btn btn-sm btn-outline-danger" (click)="onRemoveWishlistedItem(course)">Remove</button>
+          </div>
+          <div class="col-6 d-grid gap-2">
+            <button class="btn btn-sm btn-outline-primary" (click)="onAddItemToCart(course)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

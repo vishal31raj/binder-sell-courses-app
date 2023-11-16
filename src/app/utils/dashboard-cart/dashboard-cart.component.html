@@ -1,0 +1,39 @@
+<div class="cart-container p-3">
+  <h5 class="cart-header">Your Cart:</h5>
+  <hr />
+
+  <div class="text-center my-3" *ngIf="cartItems!.length <= 0">
+    No items here yet!
+  </div>
+
+  <div *ngIf="cartItems!.length > 0">
+    <div class="cart-course-item p-2 mb-2" *ngFor="let course of cartItems">
+      <div>
+        <p class="m-0 course-name">{{ course.courseName }}</p>
+        <p class="m-0">
+          <span
+            class="actual-price me-2"
+            [ngClass]="course.discountPercentage !== '0' ? 'discount' : ''"
+            >{{ course.actualPrice }}</span
+          >
+          <span
+            class="discounted-price me-2"
+            *ngIf="course.discountPercentage !== '0'"
+            >{{ course.discountedPrice }}</span
+          >
+          <span class="discount-flag" *ngIf="course.discountPercentage !== '0'"
+            >({{ course.discountPercentage }} discount)</span
+          >
+        </p>
+      </div>
+      <div class="remove-btn-div">
+        <button type="button" class="btn btn-danger btn-md" (click)="removeItemFromCart(course)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="button" (click)="navigateToCart()">Go to Checkout</button>
+    </div>
+  </div>
+</div>
