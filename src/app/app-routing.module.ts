@@ -7,6 +7,7 @@ import { CourseComponent } from './home/dashboard/course/course.component';
 import { CartComponent } from './home/cart/cart.component';
 import { WishlistComponent } from './home/wishlist/wishlist.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import { CourseListComponent } from './home/dashboard/course-list/course-list.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,18 @@ const routes: Routes = [
         component: DashboardComponent,
         children: [
           {
-            path: ':id',
+            path: 'details',
             component: CourseComponent
-          }
+          },
+          {
+            path: 'list',
+            component: CourseListComponent
+          },
+          {
+            path: '**',
+            redirectTo: 'list',
+            pathMatch: 'full'
+          },
         ]
       },
       {

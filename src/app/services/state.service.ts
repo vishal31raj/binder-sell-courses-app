@@ -8,5 +8,7 @@ export class StateService {
   cartItems = new BehaviorSubject<any[]>([]);
   wishlistItems = new BehaviorSubject<any[]>([]);
 
+  activeCourse = new BehaviorSubject<any>(null);
+
   constructor() { }
 }

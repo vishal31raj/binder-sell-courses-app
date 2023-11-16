@@ -1,1 +1,75 @@
-<p>course works!</p>
+<app-banner [bannerHeading]="bannerText"></app-banner>
+
+<nav class="my-3" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['../list']">All courses</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ course.courseName }}
+    </li>
+  </ol>
+</nav>
+
+<div class="row">
+  <div class="col-7">
+    <div>
+      <h5 class="course-title">{{ course.courseName }}</h5>
+      <div>
+        <span class="badge bg-info me-2" *ngFor="let tag of course.tags">
+          {{ tag }}
+        </span>
+      </div>
+      <p class="my-2 course-author">by {{ course.author }}</p>
+
+      <p class="mt-2">
+        <span
+          class="actual-price me-2"
+          [ngClass]="course.discountPercentage !== '0' ? 'discount' : ''"
+          >{{ course.actualPrice }}</span
+        >
+        <span
+          class="discounted-price me-2"
+          *ngIf="course.discountPercentage !== '0'"
+          >{{ course.discountedPrice }}</span
+        >
+        <span class="discount-flag" *ngIf="course.discountPercentage !== '0'"
+          >({{ course.discountPercentage }} discount)</span
+        >
+      </p>
+
+      <app-timer *ngIf="course.discountPercentage !== '0'"></app-timer>
+    </div>
+  </div>
+  <div class="col-5">
+    <div class="video-card p-3">
+      <div class="video">
+        <iframe
+          [src]="getVideoUrl()"
+          width="100%"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="mt-3">
+        <button
+          class="btn btn-sm btn-outline-secondary me-2"
+          (click)="onToggleWishlist(course, true)"
+          *ngIf="course.isWishlisted == false"
+        >
+          Add to wishlist
+        </button>
+        <button
+          class="btn btn-sm btn-warning me-2"
+          (click)="onToggleWishlist(course, false)"
+          *ngIf="course.isWishlisted == true"
+        >
+          Wishlisted
+        </button>
+        <button class="btn btn-sm btn-secondary" (click)="addToCart(course)">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

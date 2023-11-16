@@ -17,6 +17,8 @@ import { BannerComponent } from './utils/banner/banner.component';
 import { DashboardCartComponent } from './utils/dashboard-cart/dashboard-cart.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { CourseListComponent } from './home/dashboard/course-list/course-list.component';
+import { TimerComponent } from './utils/timer/timer.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { CommonModule } from '@angular/common';
     CourseComponent,
     BannerComponent,
     DashboardCartComponent,
+    CourseListComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,

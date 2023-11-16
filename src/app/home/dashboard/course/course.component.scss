@@ -1,0 +1,36 @@
+.course-title {
+  font-weight: 600;
+  color: #4c4c4c;
+}
+
+.course-author {
+  font-weight: 500;
+  color: gray;
+}
+
+.actual-price {
+  font-weight: 600;
+}
+
+.actual-price.discount {
+  text-decoration: line-through;
+  color: #4c4c4c;
+}
+
+.discounted-price {
+  font-weight: 600;
+}
+
+.discount-flag {
+  color: green;
+  font-weight: 600;
+}
+
+.video-card {
+    background-color: #ececec;
+
+    .video {
+        width: 100%;
+        border: 1px solid silver;
+    }
+}
